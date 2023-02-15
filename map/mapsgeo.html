@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #map{
+            height:500px;
+            width:100%;
+        }
+    </style>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+   
+<style>
+.searchbar{
+    width:100%;
+    max-width:300px;
+    display:inline-flex;
+  
+}
+.s_in{
+    flex-grow: 1;
+    padding:10px;
+    outline:none;
+    border:1px solid blue;
+    border-radius:5px 0 0 5px;
+    background: #f4faf9;
+   
+
+
+}
+.s_in:focus{
+    background:white;
+    box-shadow: 0 0 2px #397bdf;
+    
+}
+.s_b{
+    width:40px;
+     background: blue;
+     color:white;
+     outline:none;
+     border:none;
+     display:flex;
+     align-items:center;
+     justify-content:center;
+     border-radius:0 5px 5px 0;
+     cursor:pointer;
+     user-select: none;
+
+}
+.s_b:active{
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.25);
+
+}
+.t{
+    color:blue;
+}
+.rm{
+    
+    background:rgb(231, 71, 71);
+    border-radius:5px 5px 5px 5px;
+
+}
+
+ 
+</style>
+</head>
+<body>
+
+    <h1 class="t">WAVE POINTS</h1>
+    <div class="searchbar" id="input">
+        <input type="text" class="s_in">
+        <button class="s_b">
+            <i class="material-icons">
+search
+            </i>
+        </button>
+       
+    </div>
+    <br>
+    <br> 
+    <div> <button class="rm" id="remove_mark" style="display: none;">remove marker</button></div>
+    <br>
+    <br>
+    <div id="map">
+        
+    </div>
+    
+
+    
+    <div class="result"></div>
+  
+    <div id="display"></div>>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXmZlMirmrvz32y0iCAn9kU55Hip3yMjA&v=weekly"
+      defer
+    ></script>
+
+    <script src="mapsgeo.js"></script>
+       <br>
+    <!--<label id="lat">Lat : </label>
+    <input type="text" id="lat" placeholder="latitude">
+    <br>
+    <label id="lng">Lng : </label>
+    <input type="text" id="lng" placeholder="longitude">
+    <br>
+    <label id="place">place: </label>
+    <input type="text" id="place" placeholder="Ex:football ground">
+    <br>
+    <label id="order">order : </label>
+    <input type="text" id="order" >!-->
+    <div id="wrap" style="display: none;">
+        <form name="myForm" action="" class ="form" >
+            
+            <input type="text" id="name" placeholder="Name">
+         
+            <input type="text" id="lat" placeholder="latitude">
+            <input type="text" id="lng" placeholder="longitude">
+            <input type="text" id="place" placeholder="Ex:football ground">
+            <input type="text" id="order" placeholder="Index" >
+            <input type="text" id="desc" placeholder="Descrpition">
+            <button type="button" onclick="validateForm()">Submit</button>
+            <button type="button" onclick="save()" >submit all</button>
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js" integrity="sha512-Qlv6VSKh1gDKGoJbnyA5RMXYcvnpIqhO++MhIM2fStMcGT9i2T//tSwYFlcyoRRDcDZ+TYHpH8azBBCyhpSeqw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+</body>
+</html>
